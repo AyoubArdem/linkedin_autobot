@@ -15,9 +15,14 @@ autobot/
 build/
 dist/
 tmp/
+*.whl
+*.tar.gz
 *.egg-info/
+.eggs/
 .pytest_cache/
 .mypy_cache/
+.coverage
+htmlcov/
 
 # Django
 db.sqlite3
@@ -28,6 +33,7 @@ media/
 # Environment files
 .env
 *.env
+.python-version
 
 # IDEs
 .vscode/
