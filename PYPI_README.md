@@ -6,7 +6,7 @@ Created by Ayoub Ardem.
 
 GitHub documentation and project page:
 
-https://github.com/AyoubArdem/LinkedinAutomationBot
+https://github.com/AyoubArdem/linkedin_autobot
 
 ## What It Does
 

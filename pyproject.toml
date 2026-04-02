@@ -44,8 +44,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/AyoubArdem/LinkedinAutomationBot"
-Documentation = "https://github.com/AyoubArdem/LinkedinAutomationBot"
+Homepage = "https://github.com/AyoubArdem/linkedin_autobot"
+Documentation = "https://github.com/AyoubArdem/linkedin_autobot"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

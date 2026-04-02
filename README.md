@@ -8,6 +8,10 @@
 
 Created by Ayoub Ardem.
 
+Public documentation repository:
+
+https://github.com/AyoubArdem/linkedin_autobot
+
 ## What It Does
 
 - Collect LinkedIn profile data from a profile URL or a person name
@@ -43,6 +47,7 @@ pip install "linkedin-autobot[analytics]"
 - [Usage Guide](docs/usage.md)
 - [API Reference](docs/api.md)
 - [Examples](docs/examples.md)
+- [GitHub Documentation Repo](https://github.com/AyoubArdem/linkedin_autobot)
 - [PyPI Package](https://pypi.org/project/linkedin-autobot/)
 
 ## Get linkedin-autobot on PyPI
