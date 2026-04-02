@@ -21,7 +21,12 @@ tmp/
 .eggs/
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
 .coverage
+.coverage.*
+coverage.xml
 htmlcov/
 
 # Django
@@ -34,10 +39,16 @@ media/
 .env
 *.env
 .python-version
+*.local.toml
 
 # IDEs
 .vscode/
 .idea/
+*.code-workspace
+
+# Test and browser artifacts
+playwright-report/
+test-results/
 
 # OS files
 .DS_Store
