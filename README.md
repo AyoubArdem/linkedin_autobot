@@ -1,185 +1,66 @@
 # linkedin-autobot
 
+[![PyPI](https://img.shields.io/pypi/v/linkedin-autobot.svg)](https://pypi.org/project/linkedin-autobot/)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Status](https://img.shields.io/badge/status-alpha-orange.svg)](#roadmap)
 
-`linkedin-autobot` is a Python toolkit and backend-oriented project for LinkedIn lead generation workflows.
+`linkedin-autobot` is a Python SDK for LinkedIn lead generation workflows.
 
 Created by Ayoub Ardem.
 
-It helps you:
+## What It Does
 
-- find LinkedIn profiles from a person's name
-- collect title, location, about, and experience
-- send connection requests
-- analyze leads with heuristics or LLMs
-- expose a hosted SDK pattern for private backend products
-
-## Contents
-
-- Overview
-- Product Model
-- Repository Layout
-- Quick Start
-- SDK Usage
-- Backend API
-- Environment Variables
-- Roadmap
-
-## Overview
-
-This repository contains two layers:
-
-- `src/linkedin_autobot/`: the installable Python package
-- `LinkedinAutoBot/`: the Django backend project
-
-The package can be used either:
-
-- as a hosted SDK client that talks to your private backend
-- or as a local toolkit for direct automation and analysis
-
-If you want a company-style public product with private implementation, the hosted SDK approach is the recommended one.
+- Collect LinkedIn profile data from a profile URL or a person name
+- Return structured fields like title, location, about, and experience
+- Send LinkedIn connection requests
+- Analyze leads and recommend outreach strategies
 
 ## Product Model
 
-Recommended production model:
+`linkedin-autobot` is designed to work well in a hosted-SDK model:
 
-1. Keep the source repository private.
-2. Publish the Python package publicly to PyPI.
-3. Run the Django project as a private backend.
-4. Let users access the product through API keys and the public SDK.
+- users install the package from PyPI
+- the SDK talks to a private backend
+- the sensitive implementation can stay private
 
-That gives you:
+This public repository is intended for documentation, examples, and product information.
 
-- a public install experience
-- a private implementation
-- centralized control over scraping, throttling, analytics, and future billing
-
-## Repository Layout
-
-- `src/linkedin_autobot/client.py`: hosted SDK client for calling the backend
-- `src/linkedin_autobot/bot.py`: direct Playwright automation client
-- `src/linkedin_autobot/analytics.py`: local analysis engine
-- `src/linkedin_autobot/schemas.py`: typed data models
-- `LinkedinAutoBot/accounts/`: authentication, users, workspaces, memberships
-- `LinkedinAutoBot/automation/`: lead collection and connection workflows
-- `LinkedinAutoBot/analytics/`: lead analysis and scoring workflows
-
-## Quick Start
-
-Create and activate a virtual environment:
+## Install
 
 ```bash
-python -m venv .venv
+pip install linkedin-autobot
 ```
 
-Windows PowerShell:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-Install the project with development extras:
+Optional extras:
 
 ```bash
-pip install -e .[django,automation,analytics,dev]
+pip install "linkedin-autobot[automation]"
+pip install "linkedin-autobot[analytics]"
 ```
 
-Move into the Django project folder:
+## Documentation
 
-```bash
-cd LinkedinAutoBot
-```
+- [Usage Guide](docs/usage.md)
+- [API Reference](docs/api.md)
+- [Examples](docs/examples.md)
+- [PyPI Package](https://pypi.org/project/linkedin-autobot/)
 
-Run migrations:
+## Get linkedin-autobot on PyPI
 
-```bash
-python manage.py migrate
-```
+Visit the package page:
 
-Start the development server:
+[linkedin-autobot on PyPI](https://pypi.org/project/linkedin-autobot/)
 
-```bash
-python manage.py runserver
-```
+## Main Features
 
-## SDK Usage
+- Hosted SDK client support
+- Local Playwright automation support
+- Structured lead profile schema
+- Lead scoring and analytics support
+- API-key friendly backend integration
 
-Hosted SDK client:
+## Notes
 
-```python
-from linkedin_autobot import LinkedInAutobotClient
-
-client = LinkedInAutobotClient(
-    base_url="https://your-backend-domain.com",
-    api_key="your-api-key",
-)
-
-profile = client.collect_profile_by_name("Satya Nadella")
-analysis = client.analyze_profile(
-    profile,
-    prompt="Score this lead and recommend outreach.",
-)
-
-print(profile.title)
-print(analysis.score)
-```
-
-Local direct usage:
-
-```python
-from linkedin_autobot import LinkedInBot, LinkedInCredentials
-
-credentials = LinkedInCredentials(
-    email="your_login@example.com",
-    password="your_password",
-)
-
-bot = LinkedInBot(credentials)
-bot.login()
-profile = bot.collect_profile_by_name("Satya Nadella")
-bot.close()
-
-print(profile.profile_url)
-print(profile.title)
-```
-
-## Backend API
-
-Main hosted endpoints:
-
-- `POST /api/automation/profiles/collect-by-name/`
-- `POST /api/automation/profiles/collect/`
-- `POST /api/automation/outreach/send-connection-request/`
-- `POST /api/analytics/analyze/`
-
-These endpoints are designed for the hosted SDK client and protected with API-key authentication.
-
-Authorization format:
-
-```http
-Authorization: Bearer <api_key>
-```
-
-## Environment Variables
-
-Use `.env.example` as a starting point.
-
-Important variables:
-
-- `DJANGO_SECRET_KEY`
-- `DJANGO_DEBUG`
-- `GOOGLE_API_KEY`
-- `LINKEDIN_EMAIL`
-- `LINKEDIN_PASSWORD`
-- `LINKEDIN_AUTOBOT_BASE_URL`
-- `LINKEDIN_AUTOBOT_API_KEY`
-
-## Roadmap
-
-- Improve person matching with company and location filters
-- Add batch lead collection and analysis
-- Add a CLI for hosted and local flows
-- Separate the public SDK from the private backend more cleanly
-- Publish a public docs site alongside the PyPI package
+- Hosted SDK mode is the recommended setup for private-source products
+- Local automation requires valid LinkedIn credentials
+- LinkedIn selectors may need updates when LinkedIn changes its UI
