@@ -1,5 +1,7 @@
 # Examples
 
+[Back to README](../README.md)
+
 ## Collect by Name with Hosted SDK
 
 ```python
@@ -68,3 +70,7 @@ bot.close()
 
 print(profile.profile_url)
 ```
+
+Package page:
+
+[linkedin-autobot on PyPI](https://pypi.org/project/linkedin-autobot/)

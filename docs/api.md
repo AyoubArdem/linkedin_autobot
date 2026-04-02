@@ -1,5 +1,7 @@
 # API Reference
 
+[Back to README](../README.md)
+
 ## Public Imports
 
 ```python
@@ -97,3 +99,7 @@ Fields:
 - `recommended_outreach_ways: str`
 - `decision_maker_level: str`
 - `raw_response: str`
+
+Package page:
+
+[linkedin-autobot on PyPI](https://pypi.org/project/linkedin-autobot/)

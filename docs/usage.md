@@ -1,5 +1,7 @@
 # Usage Guide
 
+[Back to README](../README.md)
+
 ## Hosted SDK Mode
 
 Hosted SDK mode is the recommended setup if you want:
@@ -60,3 +62,7 @@ Expected header:
 ```http
 Authorization: Bearer <api_key>
 ```
+
+Package page:
+
+[linkedin-autobot on PyPI](https://pypi.org/project/linkedin-autobot/)
