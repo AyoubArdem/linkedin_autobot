@@ -29,6 +29,13 @@ tmp/
 coverage.xml
 htmlcov/
 
+# Build and test artifacts
+.pkg_test/
+.pkg_test2/
+.tmp_build/
+.tmp_pip_local/
+pytest-cache-files-*/
+
 # Django
 db.sqlite3
 */db.sqlite3
